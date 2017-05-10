@@ -1,0 +1,13 @@
+Nouveau Tweet
+<div>
+  <label for="tweet-name">Name :</label>
+  <input ng-model="newTweet.name" id="tweet-name" type="text" >
+</div>
+<div>
+  <label for="tweet-message">Message :</label>
+  <input ng-model="newTweet.message" id="tweet-message" type="text" rows="10">
+</div>
+<div>
+  <button  ng-click="newTweet.sendTweet()">Envoyer</button>
+  <button  ng-click="newTweet.sendSpam()">Spam</button>
+</div>

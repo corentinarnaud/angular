@@ -1,0 +1,23 @@
+<!-- Bonjour nous sommes le : {{ main.date | date: 'dd/MM/yyyy'}} -->
+<div ng-hide="!main.name">
+  Coucou {{ main.name }} !
+</div>
+<div>
+  <label for="tweet-page">Page :</label>
+  <input ng-model="main.newPage" id="tweet-page" type="text" value="1">
+  <button  ng-click="main.getPage()">GoTo</button>
+</div>
+<br>
+<br>
+
+<button  ng-click="main.getTweets()">Actualiser</button>
+<button  ng-click="main.goNewTweet()">New Tweet</button>
+
+<div class="arrayLine"
+     ng-class="{'licorne': $even}" ng-repeat="element in main.tweets | orderBy track by $index">
+  <!-- $odd, $even, $index, $first, $last -->
+  <div>odd : {{ $odd }}</div>
+  <div>De : {{ element.name }} :</div><div>{{ element.message }}</div><div>{{ element.date | date: 'dd/MM/yyyy hh:mm:ss'}}</div>
+  <br>
+  <button  class="buttonDel" ng-click="main.deleteTweet(element)">Supprimer</button>
+</div>
